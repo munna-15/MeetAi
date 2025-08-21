@@ -3,7 +3,7 @@ import { AvatarImage } from "@/components/ui/avatar";
 import { Avatar } from "@radix-ui/react-avatar";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ChevronDownIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
-import { GenerateAvatar } from "@/components/ui/generate-avatar";
+import { GenerateAvatar } from "@/components/generate-avatar";
 import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
