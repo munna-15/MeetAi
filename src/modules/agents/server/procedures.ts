@@ -7,6 +7,7 @@ import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
 import { agentsInsertSchema } from "../schemas";
 import { z } from "zod";
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE, MIN_PAGE_SIZE } from "@/constant";
+import { TRPCError } from "@trpc/server";
 
 export const agentsRouter = createTRPCRouter({
   // TODO: change 'getOne' to use 'protectedProcedure'
@@ -17,11 +18,16 @@ export const agentsRouter = createTRPCRouter({
       const [existingAgent] = await db
         .select({
           // TODO: change to actual count
-          ...getTableColumns(agents),
           meetingCount: sql<number>`6`,
+          ...getTableColumns(agents),
         })
         .from(agents)
         .where(eq(agents.id, input.id))
+
+      
+    //   if (!!existingAgent) {
+    //     throw new TRPCError({ code: "NOT_FOUND", message: "Agent not found" })
+    //   }
 
       return existingAgent;
     }),
@@ -44,8 +50,8 @@ export const agentsRouter = createTRPCRouter({
       const data = await db
         .select({
           // TODO: change to actual count
-          ...getTableColumns(agents),
           meetingCount: sql<number>`6`,
+          ...getTableColumns(agents),
         })
         .from(agents)
         .where(
