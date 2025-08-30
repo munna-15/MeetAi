@@ -1,5 +1,4 @@
 
-import { session } from "@/db/schema";
 import { auth } from "@/lib/auth";
 import { loadSearchParams } from "@/modules/agents/param";
 import { AgentsListHeader } from "@/modules/agents/ui/components/agents-list-header";
@@ -14,7 +13,6 @@ import { ErrorBoundary } from "react-error-boundary";
 
 interface Props {
   searchParams: Promise<SearchParams>;
-
 
 };
 const Page = async ({ searchParams }: Props) => {
