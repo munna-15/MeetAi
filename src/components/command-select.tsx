@@ -14,10 +14,10 @@ interface Props {
   options: Array<{
     id: string;
     value: string;
-    children: ReactNode;
+    children: React.ReactNode;
   }>
   onSelect: (value: string) => void;
-  onSearch: (value: string) => void;
+  onSearch?: (value: string) => void;
   value: string;
   placeholder?: string;
   isSearchchable?: boolean;
@@ -35,10 +35,15 @@ export const CommandSelect = ({
   const [open, setOpen] = useState(false);
   const selectedOption = options.find((option) => option.value === value);
 
+  const handleOpenChange = (open: boolean) => {
+    onSearch?.("");
+    setOpen(open);
+  };
+
   return (
     <>
       <Button
-        
+
         type="button"
         variant="outline"
         onClick={() => setOpen(true)}   // 👈 open dialog
@@ -55,7 +60,7 @@ export const CommandSelect = ({
       <CommandResponsiveDialog
         shouldFilter={!onSearch}
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={handleOpenChange}
       >
         <CommandInput placeholder="Search..." onValueChange={onSearch} />
         <CommandList>
