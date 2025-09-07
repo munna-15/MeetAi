@@ -237,3 +237,5 @@ export const meetingsRouter = createTRPCRouter({
       };
     }),
 });
+
+// http://localhost:8288
