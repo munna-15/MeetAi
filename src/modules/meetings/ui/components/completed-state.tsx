@@ -10,7 +10,6 @@ import {
   FileTextIcon,
   FileVideoIcon,
   ClockFadingIcon,
-  Heading1,
 } from "lucide-react";
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";

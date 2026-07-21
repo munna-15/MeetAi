@@ -1,7 +1,7 @@
 "use client"
 import { format } from "date-fns";
 import { ColumnDef } from "@tanstack/react-table"
-import { MeetingGetMany, MeetingGetOne } from "../../types"
+import { MeetingGetMany } from "../../types"
 import { GenerateAvatar } from "@/components/generated-avatar"
 import {
   CircleCheckIcon,

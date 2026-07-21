@@ -24,7 +24,6 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { CommandSelect } from "@/components/command-select";
 import { GenerateAvatar } from "@/components/generated-avatar";
-import { Divide } from "lucide-react";
 import { NewAgentDialog } from "@/modules/agents/ui/components/new-agent-dialog";
 
 interface MeetingFormProps {

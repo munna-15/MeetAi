@@ -18,9 +18,8 @@ import {
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
-  DrawerFooter,
-  DrawerTitle
-} from "@/components/ui/drawer"
+  DrawerTitle,
+} from "@/components/ui/drawer";
 
 function Command({
   className,
