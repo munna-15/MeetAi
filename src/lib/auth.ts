@@ -7,9 +7,7 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
 
   trustedOrigins: [
-    "http://localhost:3000",
-    "https://meet-h56im1a8k-theauraofficial.vercel.app",
-    process.env.BETTER_AUTH_URL!,
+    "https://meet-ai-one-liard.vercel.app",
   ],
 
   socialProviders: {
